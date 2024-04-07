@@ -75,23 +75,24 @@
     <div class="Ticketcontent">
         <h1 style="font-weight: 700">{{ $ticket->title }}</h1>
         <h3>{{ $ticket->description }}</h3><br>
-        <button type="refresh" class="btn btn-primary" onclick="window.location.reload();">Refresh</button><br><br> <!-- Fixed closing tag -->
+        {{-- <button type="refresh" class="btn btn-primary" onclick="window.location.reload();">Refresh</button><br><br> --}}
         
         {{-- POPUP CREATION --}}
 
         <div x-data="{ open: false }">
             <!-- Trigger Button -->
-            <button @click="open = true">Open Popup</button>
+            <button @click="open = true">Scrum board</button>
         
             <!-- Popup Modal -->
-            <div x-cloak x-show="open" @click.away="open = false" style="background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1;">
-                <div style="background-color: white; padding: 20px; border-radius: 10px; color: black;width: 700px; height: 700px;">
-                    <h2>Popup Title</h2>
-                    <p>This is your popup content.</p>
-                    <button @click="open = false">Close</button>
+            <div x-cloak x-show="open" @click.away="open = false" style="background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <div class="popupmiddle" style="display: flex !important; align-items: center; justify-content: center;">
+                    <div style="position: relative; background-color: white; padding: 20px; padding-top: 40px; border-radius: 10px; color: black; width: 1200px; height: 700px;">
+                        <span style="position: absolute; top: 0; right: 10px; cursor: pointer; font-size: 44px; font-weight: bold;" @click="open = false">&times;</span>
+                        <iframe src="https://sharing.clickup.com/9015544022/b/h/4-90151820181-2/62cff5e31576f5e" width="100%" height="500px"></iframe>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div><br><br>
+            
         
 
         {{-- END --}}
