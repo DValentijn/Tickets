@@ -10,7 +10,7 @@
     <div class="mt-3">
         <ul class="list-group">
         @foreach ($tickets as $ticket)
-            <li class="list-group-item">
+            <li class="list-group-item" style="margin-bottom: 10px;">
                 {{ $ticket->title }}
                 <a href="{{ route('tickets.show', $ticket->id) }}" class="ticketview">View Ticket</a>
             </li>
