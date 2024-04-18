@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('status')->default('open'); // open, closed, in_progress
+            $table->string('scrumboard')->default('');
             $table->timestamps();
         });
     }
