@@ -64,3 +64,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+Show.blade.php Heeft te daadwerkelijke ticket informatie
+Dashboard.blade.php is nog niet volledig gemaakt, hier moet ik nog iets voor verzinnen.
+index.blade.php Hier worden de tickets gedisplayed, dit zorgt ervoor dat je kan zien welke tickets jij als user kan zien.
