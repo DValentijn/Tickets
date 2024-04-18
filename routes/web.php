@@ -33,10 +33,14 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
-route::get('/tickets/create', [TicketController::class, 'create'])->name('tickets.create');
+Route::get('/tickets/create', [TicketController::class, 'create'])
+    ->name('tickets.create')
+    ->middleware(['auth', 'role:Developer|Designer']); // This is an example with Spatie's syntax.
+;
 route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');;
 Route::resource('tickets', TicketController::class);
 Route::resource('comments', CommentController::class);
+
 
 Route::post('/comments/store', [CommentController::class, 'store'])->name('comments.store');
 

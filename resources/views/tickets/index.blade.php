@@ -7,6 +7,14 @@
 {{-- 
 @section('content') --}}
     {{-- <a href="{{ route('tickets.create') }}" class="btn btn-primary">Create Ticket</a> --}}
+
+    @auth
+        @if(auth()->user()->hasAnyRole(['Developer', 'Designer']))
+            <a href="{{ route('tickets.create') }}" class="button">Create Ticket</a>
+        @endif
+    @endauth
+
+
     <div class="mt-3">
         <ul class="list-group">
         @foreach ($tickets as $ticket)
@@ -21,6 +29,16 @@
 
 <style>
     .ticketview {
+    background-color: #69a9e8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.button {
     background-color: #69a9e8;
     color: #fff;
     padding: 10px 20px;
